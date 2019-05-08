@@ -1,16 +1,16 @@
 package com.example.ehsan.daggerlearning.di.chat
 
 import android.content.Context
-import com.example.ehsan.daggerlearning.IChatInteract
 import com.example.ehsan.daggerlearning.di.ChatScope
-import com.example.ehsan.daggerlearning.di.app.AppComponent
-import dagger.Component
+import com.example.ehsan.daggerlearning.di.sc.SCComponent
+import com.example.ehsan.daggerlearning.di.sc.SCModule
+import dagger.Subcomponent
 
-@Component(dependencies = [AppComponent::class], modules = [ChatModule::class])
+@Subcomponent(modules = [ChatModule::class])
 @ChatScope
 interface ChatComponent {
 
-    fun iChatInteract(): IChatInteract
+    fun plusSCComponent(scModule: SCModule): SCComponent
 
     fun context(): Context
 

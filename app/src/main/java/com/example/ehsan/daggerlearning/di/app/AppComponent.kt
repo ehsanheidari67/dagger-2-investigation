@@ -1,8 +1,8 @@
 package com.example.ehsan.daggerlearning.di.app
 
-import android.content.Context
-import com.example.ehsan.daggerlearning.IDataRepository
 import com.example.ehsan.daggerlearning.MyApplication
+import com.example.ehsan.daggerlearning.di.chat.ChatComponent
+import com.example.ehsan.daggerlearning.di.chat.ChatModule
 import dagger.Component
 import javax.inject.Singleton
 
@@ -10,9 +10,7 @@ import javax.inject.Singleton
 @Singleton
 interface AppComponent {
 
-    fun context(): Context
-
-    fun iDataRepository(): IDataRepository
+    fun plusChatComponent(chatModule: ChatModule): ChatComponent
 
     fun inject(myApplication: MyApplication)
 }

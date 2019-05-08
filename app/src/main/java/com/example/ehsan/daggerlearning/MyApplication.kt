@@ -4,10 +4,6 @@ import android.app.Application
 import com.example.ehsan.daggerlearning.di.app.AppComponent
 import com.example.ehsan.daggerlearning.di.app.AppModule
 import com.example.ehsan.daggerlearning.di.app.DaggerAppComponent
-import com.example.ehsan.daggerlearning.di.chat.ChatComponent
-import com.example.ehsan.daggerlearning.di.chat.DaggerChatComponent
-import com.example.ehsan.daggerlearning.di.sc.DaggerSCComponent
-import com.example.ehsan.daggerlearning.di.sc.SCComponent
 import javax.inject.Inject
 
 class MyApplication : Application() {
