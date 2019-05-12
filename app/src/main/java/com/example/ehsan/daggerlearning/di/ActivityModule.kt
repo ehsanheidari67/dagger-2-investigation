@@ -1,16 +1,12 @@
 package com.example.ehsan.daggerlearning.di
 
 import com.example.ehsan.daggerlearning.MainActivity
-import dagger.Binds
 import dagger.Module
-import dagger.android.AndroidInjector
-import dagger.multibindings.ClassKey
-import dagger.multibindings.IntoMap
+import dagger.android.ContributesAndroidInjector
 
-@Module(subcomponents = [MainActivityComponent::class])
+@Module
 interface ActivityModule {
-    @Binds
-    @IntoMap
-    @ClassKey(MainActivity::class)
-    fun bindMainActivityInjectorFactory(builder: MainActivityComponent.Builder): AndroidInjector.Factory<*>
+    @MainActivityScope
+    @ContributesAndroidInjector(modules = [MainActivityModule::class])
+    fun bindMainActivity(): MainActivity
 }
